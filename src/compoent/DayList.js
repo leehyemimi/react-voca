@@ -10,7 +10,7 @@ function DayList(){
 				dummy.days.map((day,i)=>{
 					return(
 					<li key={i}>
-						<Link to={"/day/"+day.day}>
+						<Link to={"/react-voca/day/"+day.day}>
 							Day {day.day}
 						</Link>
 						</li>

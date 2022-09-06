@@ -1,5 +1,5 @@
 
-import {BrowserRouter,Route,Routes} from 'react-router-dom';
+import {Route,Routes} from 'react-router-dom';
 
 import './App.scss';
 
@@ -13,8 +13,8 @@ function App() {
 		<div className="App">
 			<Header/>
 			<Routes>
-				<Route exact path="/" element={<DayList/>}/>
-				<Route path="/day/:day" element={<Day/>}/>
+				<Route exact path="/react-voca" element={<DayList/>}/>
+				<Route path="/react-voca/day/:day" element={<Day/>}/>
 				<Route path="*" element={<EmptyPage/>}/>
 			</Routes>
 		</div>
