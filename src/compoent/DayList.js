@@ -6,17 +6,13 @@ import {Link} from 'react-router-dom';
 function DayList(){
 	return(
 		<ul className="list_day">
-			{
-				dummy.days.map((day,i)=>{
-					return(
-					<li key={i}>
-						<Link to={"/react-voca/day/"+day.day}>
-							Day {day.day}
-						</Link>
-						</li>
-					)
-				})
-			}
+			{dummy.days.map(day=>
+				<li key={day.id}>
+					<Link to={"/react-voca/day/"+day.day}>
+						Day {day.day}
+					</Link>
+				</li>
+			)}
 		</ul>
 	)
 }
