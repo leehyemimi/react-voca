@@ -10,7 +10,6 @@ import EmptyPage from "./compoent/EmptyPage";
 
 function App() {
 	return (
-		<BrowserRouter>
 		<div className="App">
 			<Header/>
 			<Routes>
@@ -19,7 +18,6 @@ function App() {
 				<Route path="*" element={<EmptyPage/>}/>
 			</Routes>
 		</div>
-		</BrowserRouter>
 	);
 }
 
