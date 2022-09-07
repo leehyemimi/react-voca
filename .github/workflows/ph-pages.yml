@@ -15,21 +15,13 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v1
 
-      - name: Node.js
-        uses: actions/setup-node@v3
+      - name: Install and build
+        run: npm install && npm run build
+      
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          node-version: 12.x
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Docs
-        run: npm run build:docs
-
-      - name: Deploy Docs
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GH_ACTIONS_TOKEN }}
-          publish_dir: ./build
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.     
