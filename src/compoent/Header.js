@@ -5,7 +5,7 @@ function Header(){
 	const navigate = useNavigate();
 	return(
 		<div className="header">
-			<h1 onClick={()=>{navigate('/react-voca/')}}>토익 영단어(고급)</h1>
+			<h1 onClick={()=>{navigate('/')}}>토익 영단어(고급)</h1>
 			<div className="menu">
 				<a href="/#" className="link">단어 추가</a>
 				<a href="/#" className="link">Day 추가</a>
