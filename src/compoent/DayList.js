@@ -9,7 +9,7 @@ function DayList(){
 			{dummy.days.map(day=>
 				<li key={day.id}>
 					<Link to={"/react-voca/day/"+day.day}>
-						Day {day.day}
+						Day- {day.day}
 					</Link>
 				</li>
 			)}
