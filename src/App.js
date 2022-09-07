@@ -1,5 +1,5 @@
 
-import {Route,Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import './App.scss';
 
@@ -11,11 +11,11 @@ import EmptyPage from "./compoent/EmptyPage";
 function App() {
 	return (
 		<div className="App">
-			<Header/>
+			<Header />
 			<Routes>
-				<Route exact path="/" element={<DayList/>}/>
-				<Route path="/day/:day" element={<Day/>}/>
-				<Route path="*" element={<EmptyPage/>}/>
+				<Route exact path="/" element={<DayList />} />
+				<Route path="/day/:day" element={<Day />} />
+				<Route path="*" element={<EmptyPage />} />
 			</Routes>
 		</div>
 	);
