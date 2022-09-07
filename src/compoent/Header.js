@@ -10,11 +10,11 @@ function Header() {
 				<a href="/#" className="link">단어 추가</a>
 				<a href="/#" className="link">Day 추가</a>
 				{/* <Link to="/create_word" className="link">
-			단어 추가
-		</Link>
-		<Link to="/create_day" className="link">
-			Day 추가
-		</Link> */}
+					단어 추가
+				</Link>
+				<Link to="/create_day" className="link">
+					Day 추가
+				</Link> */}
 			</div>
 		</div>
 	)
