@@ -3,10 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 
 import './App.scss';
 
-import Day from "./compoent/Day";
-import DayList from "./compoent/DayList";
-import Header from "./compoent/Header";
-import EmptyPage from "./compoent/EmptyPage";
+import Day from "./pages/Day";
+import DayList from "./pages/DayList";
+import Header from "./pages/Header";
+import EmptyPage from "./pages/EmptyPage";
 
 function App() {
 	return (

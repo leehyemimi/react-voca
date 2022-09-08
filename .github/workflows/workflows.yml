@@ -6,22 +6,50 @@ on:
       - 'master'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  # build:
+  #   runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
+  #   strategy:
+  #     matrix:
+  #       node-version: [14.x]
 
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v1
+
+  #     - name: Install and build
+  #       run: npm install && npm run build
+
+  #     - name: Deploy
+  #       uses: JamesIves/github-pages-deploy-action@4.1.1
+  #       with:
+  #         branch: gh-pages # The branch the action should deploy to.
+  #         folder: build # The folder the action should deploy.
+
+
+   deploy:
+    runs-on: ubuntu-18.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
-      - name: Install and build
-        run: npm install && npm run build
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: "14.x"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci
+      - run: npm run build # 빌드 스크립트
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build # 이 폴더에 있는 파일을 배포
