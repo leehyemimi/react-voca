@@ -8,7 +8,7 @@ function DayList() {
 	const [days, setDays] = useState([]);
 
 	useEffect(() => { //http://localhost:3004/days
-		fetch('http://my-json-server.typicode.com/leehyemimi/json-server-api/days')
+		fetch('https://my-json-server.typicode.com/leehyemimi/json-server-api/days')
 			.then(res => {
 				return res.json();
 			})

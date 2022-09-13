@@ -17,7 +17,7 @@ function Day() {
 	const [words, setWords] = useState([]);
 
 	useEffect(() => { //http://localhost:3004/words
-		fetch(`http://my-json-server.typicode.com/leehyemimi/json-server-api/words?day=${day}`)
+		fetch(`https://my-json-server.typicode.com/leehyemimi/json-server-api/words?day=${day}`)
 			.then(res => {
 				return res.json();
 			})
