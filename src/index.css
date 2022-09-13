@@ -35,6 +35,7 @@ a {
 
 .input_area {
 	margin-bottom: 10px;
+	text-align: left;
 }
 
 .input_area label {

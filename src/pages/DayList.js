@@ -4,7 +4,8 @@ import useFetch from './../hooks/useFetch';
 import './DayList.scss';
 
 function DayList() {
-	const days = useFetch('https://my-json-server.typicode.com/leehyemimi/json-server-api/days');
+	// https://my-json-server.typicode.com/leehyemimi/json-server-api
+	const days = useFetch('http://localhost:3004/days');
 	return (
 		<ul className="list_day">
 			{days.map(day =>

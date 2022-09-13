@@ -9,7 +9,8 @@ function Day() {
 	// const wordList = dummy.words.filter(word => (
 	// 	word.day === Number(day)
 	// ))
-	const words = useFetch(`https://my-json-server.typicode.com/leehyemimi/json-server-api/words?day=${day}`);
+	// https://my-json-server.typicode.com/leehyemimi/json-server-api
+	const words = useFetch(`http://localhost:3004/words?day=${day}`);
 
 	return (
 		<>
