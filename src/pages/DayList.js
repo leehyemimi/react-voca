@@ -1,22 +1,10 @@
 
-import './DayList.scss'
-//import dummy from './../db/data.json'
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import useFetch from './../hooks/useFetch';
+import './DayList.scss';
 
 function DayList() {
-	const [days, setDays] = useState([]);
-
-	useEffect(() => { //http://localhost:3004/days
-		fetch('https://my-json-server.typicode.com/leehyemimi/json-server-api/days')
-			.then(res => {
-				return res.json();
-			})
-			.then(data => {
-				setDays(data);
-			})
-	}, []);
-
+	const days = useFetch('https://my-json-server.typicode.com/leehyemimi/json-server-api/days');
 	return (
 		<ul className="list_day">
 			{days.map(day =>

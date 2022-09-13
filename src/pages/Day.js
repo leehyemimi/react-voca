@@ -1,31 +1,15 @@
 
 import { useParams } from "react-router-dom";
-
-import './Day.scss'
-
-//import dummy from '../db/data.json';
+import useFetch from './../hooks/useFetch';
 import Word from "../compoent/Word";
-import { useState, useEffect } from "react";
-
+import './Day.scss';
 
 function Day() {
 	const { day } = useParams();
 	// const wordList = dummy.words.filter(word => (
 	// 	word.day === Number(day)
 	// ))
-
-	const [words, setWords] = useState([]);
-
-	useEffect(() => { //http://localhost:3004/words
-		fetch(`https://my-json-server.typicode.com/leehyemimi/json-server-api/words?day=${day}`)
-			.then(res => {
-				return res.json();
-			})
-			.then(data => {
-				setWords(data);
-			})
-	}, [day]);
-
+	const words = useFetch(`https://my-json-server.typicode.com/leehyemimi/json-server-api/words?day=${day}`);
 
 	return (
 		<>
